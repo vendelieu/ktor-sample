@@ -12,6 +12,9 @@ This repository contains a Ktor-based application with various routes and their 
 
 ## Endpoints
 
+Also, there's swagger available at:
+``http://0.0.0.0:8080/swagger``
+
 ### `GET /Read`
 
 - **Description**: Retrieves the value of a specified counter.
