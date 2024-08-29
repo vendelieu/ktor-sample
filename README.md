@@ -26,7 +26,7 @@ Also, there's swagger available at:
 ### `POST /Create`
 
 - **Description**: Creates a new counter with the specified value.
-- **Request Body**: JSON object containing `name` and `counter` values, which is being validated for blank value and for megative value.
+- **Request Body**: JSON object containing `name` and `counter` values, which is being validated for blank value and for negative value.
 - **Responses**:
     - `201 Created`: When the counter is successfully created. Response body includes the created counter details.
 
