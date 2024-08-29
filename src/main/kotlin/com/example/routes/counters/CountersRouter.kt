@@ -48,20 +48,20 @@ fun Routing.countersRoutes() {
 
     @KtorResponds(
         mapping = [
-            ResponseEntry("204", Unit::class),
+            ResponseEntry("422", Unit::class),
             ResponseEntry("200", Int::class)
         ]
     )
     patch("/Increment") {
         val counter = call.request.queryParameters["counter"]
         if (counter == null) {
-            call.respond(HttpStatusCode.NoContent)
+            call.respond(HttpStatusCode.UnprocessableEntity)
             return@patch
         }
 
         val result = transaction { CountersService.increment(counter) }
 
-        if (result == null) call.respond(HttpStatusCode.NoContent)
+        if (result == null) call.respond(HttpStatusCode.UnprocessableEntity)
         else call.respond(HttpStatusCode.OK, result)
     }
 

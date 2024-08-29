@@ -33,8 +33,8 @@ dependencies {
 
 swagger {
     documentation {
-        docsTitle = "Example Ktor Server"
-        docsDescription = "Example Server Description"
+        docsTitle = "Sample Ktor Server"
+        docsDescription = "Sample ktor server with counter managing logic implementation."
         docsVersion = "1.0"
     }
 

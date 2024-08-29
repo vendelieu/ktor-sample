@@ -20,7 +20,7 @@ Also, there's swagger available at:
 - **Description**: Retrieves the value of a specified counter.
 - **Query Parameter**: `counter` (the name of the counter to read)
 - **Responses**:
-    - `200 OK`: When the counter exists. Response body includes counter details.
+    - `200 OK`: When the counter exists. Response body includes counter's details.
     - `404 Not Found`: When the counter does not exist.
 
 ### `POST /Create`
@@ -28,7 +28,7 @@ Also, there's swagger available at:
 - **Description**: Creates a new counter with the specified value.
 - **Request Body**: JSON object containing `name` and `counter` values, which is being validated for blank value and for negative value.
 - **Responses**:
-    - `201 Created`: When the counter is successfully created. Response body includes the created counter details.
+    - `201 Created`: When the counter is successfully created. Response body includes the created counter's details.
 
 ### `PATCH /Increment`
 
@@ -36,7 +36,7 @@ Also, there's swagger available at:
 - **Query Parameter**: `counter` (the name of the counter to increment)
 - **Responses**:
     - `200 OK`: When the counter exists and is incremented. Response body includes the new value.
-    - `204 No Content`: When the counter does not exist.
+    - `422 UnprocessableEntity`: When the counter does not exist.
 
 ### `DELETE /Delete`
 

@@ -26,7 +26,7 @@ object ExceptionHandlerConfigurator {
         }
 
         exception<RequestValidationException> { call, cause ->
-            call.respond(HttpStatusCode.BadRequest, cause.reasons.joinToString())
+            call.respond(HttpStatusCode.BadRequest, cause.reasons)
         }
 
         exception<Throwable> { call, cause ->

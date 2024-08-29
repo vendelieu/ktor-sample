@@ -37,7 +37,40 @@ class CountersTest : TestCtx() {
     }
 
     @Test
-    suspend fun `PATCH Increment should return 200 and incremented value`() {
+    suspend fun `POST Create should return 400 when name is empty`() {
+        val response = testApp.client.post("/Create") {
+            contentType(ContentType.Application.Json)
+            setBody("""{"name":"","counter":10}""")
+        }
+
+        response.status shouldBe HttpStatusCode.BadRequest
+        response.bodyAsText() shouldBe """["name can't be blank"]"""
+    }
+
+    @Test
+    suspend fun `POST Create should return 400 when counter is negative`() {
+        val response = testApp.client.post("/Create") {
+            contentType(ContentType.Application.Json)
+            setBody("""{"name":"validName","counter":-5}""")
+        }
+
+        response.status shouldBe HttpStatusCode.BadRequest
+        response.bodyAsText() shouldBe """["value can't be negative"]"""
+    }
+
+    @Test
+    suspend fun `POST Create should return 400 when name is empty and counter is negative`() {
+        val response = testApp.client.post("/Create") {
+            contentType(ContentType.Application.Json)
+            setBody("""{"name":"","counter":-5}""")
+        }
+
+        response.status shouldBe HttpStatusCode.BadRequest
+        response.bodyAsText() shouldBe """["name can't be blank","value can't be negative"]"""
+    }
+
+    @Test
+    suspend fun `PATCH Increment should return 200 and incremented value when counter exists`() {
         transaction {
             CountersService.create("testIncrement", 5)
         }
@@ -52,7 +85,7 @@ class CountersTest : TestCtx() {
     suspend fun `PATCH Increment should return 204 when counter does not exist`() {
         val response = testApp.client.patch("/Increment?counter=nonexistent")
 
-        response.status shouldBe HttpStatusCode.NoContent
+        response.status shouldBe HttpStatusCode.UnprocessableEntity
     }
 
     @Test

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Example Ktor Server</title>
+  <title>Sample Ktor Server</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8" />
@@ -697,10 +697,10 @@
   }
 };
             defs["com.example.dto.response.CountersResponse"] = {
-  "required" : [ "name", "value" ],
+  "required" : [ "counter", "name" ],
   "properties" : {
-    "name" : { },
-    "value" : { }
+    "counter" : { },
+    "name" : { }
   }
 };
             defs["kotlin.Unit"] = {
@@ -744,7 +744,7 @@
       <div id="content">
         <div id="project">
           <div class="pull-left">
-            <h1>Example Ktor Server</h1>
+            <h1>Sample Ktor Server</h1>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -753,7 +753,7 @@
             <h2 id="welcome-to-apidoc">API and SDK Documentation</h2>
               <div class="app-desc">Version: 1.0</div>
             <hr>
-            <div>Example Server Description</div>
+            <div>Sample ktor server with counter managing logic implementation.</div>
           </div>
         </div>
         <div id="sections">
@@ -862,9 +862,9 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
                             </div>
 
                             <div class="tab-pane" id="examples-Counters-createPost-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var ExampleKtorServer = require('example_ktor_server');
+                              <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
-var api = new ExampleKtorServer.CountersApi()
+var api = new SampleKtorServer.CountersApi()
 var body = ; // {{Com.example.dto.request.CounterCreateRequest}} 
 
 var callback = function(error, data, response) {
@@ -1169,9 +1169,9 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
                             </div>
 
                             <div class="tab-pane" id="examples-Counters-deleteDelete-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var ExampleKtorServer = require('example_ktor_server');
+                              <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
-var api = new ExampleKtorServer.CountersApi()
+var api = new SampleKtorServer.CountersApi()
 var opts = { 
   'counter':  // {{}} 
 };
@@ -1449,9 +1449,9 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
                             </div>
 
                             <div class="tab-pane" id="examples-Counters-getAllGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var ExampleKtorServer = require('example_ktor_server');
+                              <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
-var api = new ExampleKtorServer.CountersApi()
+var api = new SampleKtorServer.CountersApi()
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -1701,9 +1701,9 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
                             </div>
 
                             <div class="tab-pane" id="examples-Counters-incrementPatch-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var ExampleKtorServer = require('example_ktor_server');
+                              <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
-var api = new ExampleKtorServer.CountersApi()
+var api = new SampleKtorServer.CountersApi()
 var opts = { 
   'counter':  // {{}} 
 };
@@ -1832,18 +1832,18 @@ except ApiException as e:
                             </table>
 
                           <h2>Responses</h2>
-                            <h3> Status: 204 -  </h3>
+                            <h3> Status: 422 -  </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-incrementPatch-204-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-incrementPatch-422-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-incrementPatch-204-schema">
-                                  <div id='responses-incrementPatch-204-schema-204' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-incrementPatch-422-schema">
+                                  <div id='responses-incrementPatch-422-schema-422' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1869,14 +1869,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-incrementPatch-204-schema-data').val(stringify(schema));
-                                        var result = $('#responses-incrementPatch-204-schema-204');
+                                        $('#responses-incrementPatch-422-schema-data').val(stringify(schema));
+                                        var result = $('#responses-incrementPatch-422-schema-422');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-incrementPatch-204-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-incrementPatch-422-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -2033,9 +2033,9 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
                             </div>
 
                             <div class="tab-pane" id="examples-Counters-readGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var ExampleKtorServer = require('example_ktor_server');
+                              <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
-var api = new ExampleKtorServer.CountersApi()
+var api = new SampleKtorServer.CountersApi()
 var opts = { 
   'counter':  // {{}} 
 };
