@@ -15,80 +15,82 @@ import org.jetbrains.exposed.sql.transactions.transaction
 
 @Tag(["Counters"])
 fun Routing.countersRoutes() {
-    @KtorResponds(
-        mapping = [
-            ResponseEntry("200", CountersResponse::class),
-            ResponseEntry("404", Unit::class)
-        ]
-    )
-    get("/Read") {
-        val counter = call.request.queryParameters["counter"]
-        if (counter == null) {
-            call.respond(HttpStatusCode.NotFound)
-            return@get
+    route("/counters") {
+        @KtorResponds(
+            mapping = [
+                ResponseEntry("200", CountersResponse::class),
+                ResponseEntry("404", Unit::class)
+            ]
+        )
+        get("/read") {
+            val counter = call.request.queryParameters["counter"]
+            if (counter == null) {
+                call.respond(HttpStatusCode.NotFound)
+                return@get
+            }
+
+            val result = transaction { CountersService.get(counter) }
+
+            if (result == null) call.respond(HttpStatusCode.NotFound)
+            else call.respond(HttpStatusCode.OK, result.toResponse())
         }
 
-        val result = transaction { CountersService.get(counter) }
+        @KtorResponds(
+            mapping = [
+                ResponseEntry("201", CountersResponse::class),
+            ]
+        )
+        post("/create") {
+            val request = call.receive<CounterCreateRequest>()
+            val result = transaction { CountersService.create(request.name, request.counter) }
 
-        if (result == null) call.respond(HttpStatusCode.NotFound)
-        else call.respond(HttpStatusCode.OK, result.toResponse())
-    }
-
-    @KtorResponds(
-        mapping = [
-            ResponseEntry("201", CountersResponse::class),
-        ]
-    )
-    post("/Create") {
-        val request = call.receive<CounterCreateRequest>()
-        val result = transaction { CountersService.create(request.name, request.counter) }
-
-        call.respond(HttpStatusCode.Created, result.toResponse())
-    }
-
-    @KtorResponds(
-        mapping = [
-            ResponseEntry("422", Unit::class),
-            ResponseEntry("200", Int::class)
-        ]
-    )
-    patch("/Increment") {
-        val counter = call.request.queryParameters["counter"]
-        if (counter == null) {
-            call.respond(HttpStatusCode.UnprocessableEntity)
-            return@patch
+            call.respond(HttpStatusCode.Created, result.toResponse())
         }
 
-        val result = transaction { CountersService.increment(counter) }
+        @KtorResponds(
+            mapping = [
+                ResponseEntry("422", Unit::class),
+                ResponseEntry("200", Int::class)
+            ]
+        )
+        patch("/increment") {
+            val counter = call.request.queryParameters["counter"]
+            if (counter == null) {
+                call.respond(HttpStatusCode.UnprocessableEntity)
+                return@patch
+            }
 
-        if (result == null) call.respond(HttpStatusCode.UnprocessableEntity)
-        else call.respond(HttpStatusCode.OK, result)
-    }
+            val result = transaction { CountersService.increment(counter) }
 
-    @KtorResponds(
-        mapping = [
-            ResponseEntry("204", Unit::class)
-        ]
-    )
-    delete("/Delete") {
-        val counter = call.request.queryParameters["counter"]
-        if (counter == null) {
+            if (result == null) call.respond(HttpStatusCode.UnprocessableEntity)
+            else call.respond(HttpStatusCode.OK, result)
+        }
+
+        @KtorResponds(
+            mapping = [
+                ResponseEntry("204", Unit::class)
+            ]
+        )
+        delete("/delete") {
+            val counter = call.request.queryParameters["counter"]
+            if (counter == null) {
+                call.respond(HttpStatusCode.NoContent)
+                return@delete
+            }
+
+            transaction { CountersService.delete(counter) }
             call.respond(HttpStatusCode.NoContent)
-            return@delete
         }
 
-        transaction { CountersService.delete(counter) }
-        call.respond(HttpStatusCode.NoContent)
-    }
+        @KtorResponds(
+            mapping = [
+                ResponseEntry("200", CountersResponse::class, isCollection = true),
+            ]
+        )
+        get("/all") {
+            val result = transaction { CountersService.getAll().map { it.toResponse() } }
 
-    @KtorResponds(
-        mapping = [
-            ResponseEntry("200", CountersResponse::class, isCollection = true),
-        ]
-    )
-    get("/GetAll") {
-        val result = transaction { CountersService.getAll().map { it.toResponse() } }
-
-        call.respond(HttpStatusCode.OK, result)
+            call.respond(HttpStatusCode.OK, result)
+        }
     }
 }

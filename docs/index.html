@@ -723,20 +723,20 @@
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Counters"><a href="#api-Counters">API Methods - Counters</a></li>
-                    <li data-group="Counters" data-name="createPost" class="">
-                      <a href="#api-Counters-createPost">createPost</a>
+                    <li data-group="Counters" data-name="countersAllGet" class="">
+                      <a href="#api-Counters-countersAllGet">countersAllGet</a>
                     </li>
-                    <li data-group="Counters" data-name="deleteDelete" class="">
-                      <a href="#api-Counters-deleteDelete">deleteDelete</a>
+                    <li data-group="Counters" data-name="countersCreatePost" class="">
+                      <a href="#api-Counters-countersCreatePost">countersCreatePost</a>
                     </li>
-                    <li data-group="Counters" data-name="getAllGet" class="">
-                      <a href="#api-Counters-getAllGet">getAllGet</a>
+                    <li data-group="Counters" data-name="countersDeleteDelete" class="">
+                      <a href="#api-Counters-countersDeleteDelete">countersDeleteDelete</a>
                     </li>
-                    <li data-group="Counters" data-name="incrementPatch" class="">
-                      <a href="#api-Counters-incrementPatch">incrementPatch</a>
+                    <li data-group="Counters" data-name="countersIncrementPatch" class="">
+                      <a href="#api-Counters-countersIncrementPatch">countersIncrementPatch</a>
                     </li>
-                    <li data-group="Counters" data-name="readGet" class="">
-                      <a href="#api-Counters-readGet">readGet</a>
+                    <li data-group="Counters" data-name="countersReadGet" class="">
+                      <a href="#api-Counters-countersReadGet">countersReadGet</a>
                     </li>
           </ul>
         </nav>
@@ -759,10 +759,10 @@
         <div id="sections">
                 <section id="api-Counters">
                   <h1>Counters</h1>
-                    <div id="api-Counters-createPost">
-                      <article id="api-Counters-createPost-0" data-group="User" data-name="createPost" data-version="0">
+                    <div id="api-Counters-countersAllGet">
+                      <article id="api-Counters-countersAllGet-0" data-group="User" data-name="countersAllGet" data-version="0">
                         <div class="pull-left">
-                          <h1>createPost</h1>
+                          <h1>countersAllGet</h1>
                           <p></p>
                         </div>
                         <div class="pull-right"></div>
@@ -771,32 +771,281 @@
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/Create</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/counters/all</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Counters-createPost-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Counters-createPost-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Counters-createPost-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Counters-createPost-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Counters-createPost-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Counters-createPost-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Counters-createPost-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Counters-createPost-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Counters-createPost-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Counters-createPost-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Counters-createPost-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Counters-countersAllGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Counters-countersAllGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Counters-countersAllGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersAllGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersAllGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Counters-countersAllGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersAllGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersAllGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Counters-countersAllGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Counters-countersAllGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Counters-countersAllGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Counters-createPost-0-curl">
+                          <div class="tab-pane active" id="examples-Counters-countersAllGet-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
+-H "Accept: application/json"\
+"//counters/all"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Counters-countersAllGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.CountersApi;
+
+import java.io.File;
+import java.util.*;
+
+public class CountersApiExample {
+
+    public static void main(String[] args) {
+        
+        CountersApi apiInstance = new CountersApi();
+        try {
+            apiInstance.countersAllGet();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CountersApi#countersAllGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Counters-countersAllGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.CountersApi;
+
+public class CountersApiExample {
+
+    public static void main(String[] args) {
+        CountersApi apiInstance = new CountersApi();
+        try {
+            apiInstance.countersAllGet();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CountersApi#countersAllGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Counters-countersAllGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Counters-countersAllGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+CountersApi *apiInstance = [[CountersApi alloc] init];
+
+[apiInstance countersAllGetWithCompletionHandler: 
+              ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Counters-countersAllGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
+
+var api = new SampleKtorServer.CountersApi()
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.countersAllGet(callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Counters-countersAllGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Counters-countersAllGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class countersAllGetExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new CountersApi();
+
+            try
+            {
+                apiInstance.countersAllGet();
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CountersApi.countersAllGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Counters-countersAllGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiCountersApi();
+
+try {
+    $api_instance->countersAllGet();
+} catch (Exception $e) {
+    echo 'Exception when calling CountersApi->countersAllGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Counters-countersAllGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::CountersApi;
+
+my $api_instance = WWW::SwaggerClient::CountersApi->new();
+
+eval { 
+    $api_instance->countersAllGet();
+};
+if ($@) {
+    warn "Exception when calling CountersApi->countersAllGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Counters-countersAllGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.CountersApi()
+
+try: 
+    api_instance.counters_all_get()
+except ApiException as e:
+    print("Exception when calling CountersApi->countersAllGet: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 -  </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-countersAllGet-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-countersAllGet-200-schema">
+                                  <div id='responses-countersAllGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "items" : {
+          "$ref" : "#/components/schemas/com.example.dto.response.CountersResponse"
+        },
+        "x-content-type" : "application/json"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.components = {};
+                                          schemaWrapper.components.schemas = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-countersAllGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-countersAllGet-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-countersAllGet-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Counters-countersCreatePost">
+                      <article id="api-Counters-countersCreatePost-0" data-group="User" data-name="countersCreatePost" data-version="0">
+                        <div class="pull-left">
+                          <h1>countersCreatePost</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/counters/create</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Counters-countersCreatePost-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Counters-countersCreatePost-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Counters-countersCreatePost-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersCreatePost-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersCreatePost-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Counters-countersCreatePost-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersCreatePost-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersCreatePost-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Counters-countersCreatePost-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Counters-countersCreatePost-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Counters-countersCreatePost-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Counters-countersCreatePost-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X POST\
 -H "Accept: application/json"\
 -H "Content-Type: application/json"\
-"//Create"</code></pre>
+"//counters/create"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Counters-createPost-0-java">
+                          <div class="tab-pane" id="examples-Counters-countersCreatePost-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -812,17 +1061,17 @@ public class CountersApiExample {
         CountersApi apiInstance = new CountersApi();
         Com.example.dto.request.CounterCreateRequest body = ; // Com.example.dto.request.CounterCreateRequest | 
         try {
-            com.example.dto.response.CountersResponse result = apiInstance.createPost(body);
+            com.example.dto.response.CountersResponse result = apiInstance.countersCreatePost(body);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#createPost");
+            System.err.println("Exception when calling CountersApi#countersCreatePost");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Counters-createPost-0-android">
+                          <div class="tab-pane" id="examples-Counters-countersCreatePost-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.CountersApi;
 
 public class CountersApiExample {
@@ -831,25 +1080,25 @@ public class CountersApiExample {
         CountersApi apiInstance = new CountersApi();
         Com.example.dto.request.CounterCreateRequest body = ; // Com.example.dto.request.CounterCreateRequest | 
         try {
-            com.example.dto.response.CountersResponse result = apiInstance.createPost(body);
+            com.example.dto.response.CountersResponse result = apiInstance.countersCreatePost(body);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#createPost");
+            System.err.println("Exception when calling CountersApi#countersCreatePost");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Counters-createPost-0-groovy">
+  <div class="tab-pane" id="examples-Counters-countersCreatePost-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Counters-createPost-0-objc">
+                            <div class="tab-pane" id="examples-Counters-countersCreatePost-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Com.example.dto.request.CounterCreateRequest *body = ; // 
 
 CountersApi *apiInstance = [[CountersApi alloc] init];
 
-[apiInstance createPostWith:body
+[apiInstance countersCreatePostWith:body
               completionHandler: ^(com.example.dto.response.CountersResponse output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -861,7 +1110,7 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-createPost-0-javascript">
+                            <div class="tab-pane" id="examples-Counters-countersCreatePost-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
 var api = new SampleKtorServer.CountersApi()
@@ -874,14 +1123,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.createPost(body, callback);
+api.countersCreatePost(body, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Counters-createPost-0-angular">
+                            <!--<div class="tab-pane" id="examples-Counters-countersCreatePost-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Counters-createPost-0-csharp">
+                            <div class="tab-pane" id="examples-Counters-countersCreatePost-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -890,7 +1139,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class createPostExample
+    public class countersCreatePostExample
     {
         public void main()
         {
@@ -900,12 +1149,12 @@ namespace Example
 
             try
             {
-                com.example.dto.response.CountersResponse result = apiInstance.createPost(body);
+                com.example.dto.response.CountersResponse result = apiInstance.countersCreatePost(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CountersApi.createPost: " + e.Message );
+                Debug.Print("Exception when calling CountersApi.countersCreatePost: " + e.Message );
             }
         }
     }
@@ -913,7 +1162,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-createPost-0-php">
+                            <div class="tab-pane" id="examples-Counters-countersCreatePost-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -921,15 +1170,15 @@ $api_instance = new Swagger\Client\ApiCountersApi();
 $body = ; // Com.example.dto.request.CounterCreateRequest | 
 
 try {
-    $result = $api_instance->createPost($body);
+    $result = $api_instance->countersCreatePost($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CountersApi->createPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CountersApi->countersCreatePost: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-createPost-0-perl">
+                            <div class="tab-pane" id="examples-Counters-countersCreatePost-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::CountersApi;
@@ -938,15 +1187,15 @@ my $api_instance = WWW::SwaggerClient::CountersApi->new();
 my $body = WWW::SwaggerClient::Object::Com.example.dto.request.CounterCreateRequest->new(); # Com.example.dto.request.CounterCreateRequest | 
 
 eval { 
-    my $result = $api_instance->createPost(body => $body);
+    my $result = $api_instance->countersCreatePost(body => $body);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling CountersApi->createPost: $@\n";
+    warn "Exception when calling CountersApi->countersCreatePost: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-createPost-0-python">
+                            <div class="tab-pane" id="examples-Counters-countersCreatePost-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -958,10 +1207,10 @@ api_instance = swagger_client.CountersApi()
 body =  # Com.example.dto.request.CounterCreateRequest | 
 
 try: 
-    api_response = api_instance.create_post(body)
+    api_response = api_instance.counters_create_post(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CountersApi->createPost: %s\n" % e)</code></pre>
+    print("Exception when calling CountersApi->countersCreatePost: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1003,12 +1252,12 @@ except ApiException as e:
                                   }
                                 
                                   var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-                                  var result = $('#d2e199_createPost_body');
+                                  var result = $('#d2e199_countersCreatePost_body');
                                   result.empty();
                                   result.append(view.render());
                                 });
                                 </script>
-                                <div id="d2e199_createPost_body"></div>
+                                <div id="d2e199_countersCreatePost_body"></div>
                                 </td>
                                 </tr>
                             </table>
@@ -1020,14 +1269,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-createPost-201-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-countersCreatePost-201-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-createPost-201-schema">
-                                  <div id='responses-createPost-201-schema-201' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-countersCreatePost-201-schema">
+                                  <div id='responses-countersCreatePost-201-schema-201' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1053,24 +1302,24 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-createPost-201-schema-data').val(stringify(schema));
-                                        var result = $('#responses-createPost-201-schema-201');
+                                        $('#responses-countersCreatePost-201-schema-data').val(stringify(schema));
+                                        var result = $('#responses-countersCreatePost-201-schema-201');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-createPost-201-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-countersCreatePost-201-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Counters-deleteDelete">
-                      <article id="api-Counters-deleteDelete-0" data-group="User" data-name="deleteDelete" data-version="0">
+                    <div id="api-Counters-countersDeleteDelete">
+                      <article id="api-Counters-countersDeleteDelete-0" data-group="User" data-name="countersDeleteDelete" data-version="0">
                         <div class="pull-left">
-                          <h1>deleteDelete</h1>
+                          <h1>countersDeleteDelete</h1>
                           <p></p>
                         </div>
                         <div class="pull-right"></div>
@@ -1079,31 +1328,31 @@ except ApiException as e:
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/Delete</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/counters/delete</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Counters-deleteDelete-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Counters-deleteDelete-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Counters-deleteDelete-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Counters-deleteDelete-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Counters-deleteDelete-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Counters-deleteDelete-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Counters-deleteDelete-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Counters-deleteDelete-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Counters-deleteDelete-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Counters-deleteDelete-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Counters-deleteDelete-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Counters-countersDeleteDelete-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Counters-countersDeleteDelete-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Counters-countersDeleteDelete-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersDeleteDelete-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersDeleteDelete-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Counters-countersDeleteDelete-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersDeleteDelete-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersDeleteDelete-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Counters-countersDeleteDelete-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Counters-countersDeleteDelete-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Counters-countersDeleteDelete-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Counters-deleteDelete-0-curl">
+                          <div class="tab-pane active" id="examples-Counters-countersDeleteDelete-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE\
 -H "Accept: application/json"\
-"//Delete?counter="</code></pre>
+"//counters/delete?counter="</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Counters-deleteDelete-0-java">
+                          <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1119,17 +1368,17 @@ public class CountersApiExample {
         CountersApi apiInstance = new CountersApi();
          counter = ; //  | 
         try {
-            kotlin.Unit result = apiInstance.deleteDelete(counter);
+            kotlin.Unit result = apiInstance.countersDeleteDelete(counter);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#deleteDelete");
+            System.err.println("Exception when calling CountersApi#countersDeleteDelete");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Counters-deleteDelete-0-android">
+                          <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.CountersApi;
 
 public class CountersApiExample {
@@ -1138,25 +1387,25 @@ public class CountersApiExample {
         CountersApi apiInstance = new CountersApi();
          counter = ; //  | 
         try {
-            kotlin.Unit result = apiInstance.deleteDelete(counter);
+            kotlin.Unit result = apiInstance.countersDeleteDelete(counter);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#deleteDelete");
+            System.err.println("Exception when calling CountersApi#countersDeleteDelete");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Counters-deleteDelete-0-groovy">
+  <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Counters-deleteDelete-0-objc">
+                            <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-objc">
                               <pre class="prettyprint"><code class="language-cpp"> *counter = ; //  (optional)
 
 CountersApi *apiInstance = [[CountersApi alloc] init];
 
-[apiInstance deleteDeleteWith:counter
+[apiInstance countersDeleteDeleteWith:counter
               completionHandler: ^(kotlin.Unit output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -1168,7 +1417,7 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-deleteDelete-0-javascript">
+                            <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
 var api = new SampleKtorServer.CountersApi()
@@ -1182,14 +1431,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.deleteDelete(opts, callback);
+api.countersDeleteDelete(opts, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Counters-deleteDelete-0-angular">
+                            <!--<div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Counters-deleteDelete-0-csharp">
+                            <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1198,7 +1447,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class deleteDeleteExample
+    public class countersDeleteDeleteExample
     {
         public void main()
         {
@@ -1208,12 +1457,12 @@ namespace Example
 
             try
             {
-                kotlin.Unit result = apiInstance.deleteDelete(counter);
+                kotlin.Unit result = apiInstance.countersDeleteDelete(counter);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CountersApi.deleteDelete: " + e.Message );
+                Debug.Print("Exception when calling CountersApi.countersDeleteDelete: " + e.Message );
             }
         }
     }
@@ -1221,7 +1470,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-deleteDelete-0-php">
+                            <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -1229,15 +1478,15 @@ $api_instance = new Swagger\Client\ApiCountersApi();
 $counter = ; //  | 
 
 try {
-    $result = $api_instance->deleteDelete($counter);
+    $result = $api_instance->countersDeleteDelete($counter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CountersApi->deleteDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CountersApi->countersDeleteDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-deleteDelete-0-perl">
+                            <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::CountersApi;
@@ -1246,15 +1495,15 @@ my $api_instance = WWW::SwaggerClient::CountersApi->new();
 my $counter = ; #  | 
 
 eval { 
-    my $result = $api_instance->deleteDelete(counter => $counter);
+    my $result = $api_instance->countersDeleteDelete(counter => $counter);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling CountersApi->deleteDelete: $@\n";
+    warn "Exception when calling CountersApi->countersDeleteDelete: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-deleteDelete-0-python">
+                            <div class="tab-pane" id="examples-Counters-countersDeleteDelete-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1266,10 +1515,10 @@ api_instance = swagger_client.CountersApi()
 counter =  #  |  (optional)
 
 try: 
-    api_response = api_instance.delete_delete(counter=counter)
+    api_response = api_instance.counters_delete_delete(counter=counter)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CountersApi->deleteDelete: %s\n" % e)</code></pre>
+    print("Exception when calling CountersApi->countersDeleteDelete: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1289,7 +1538,7 @@ except ApiException as e:
                                 <td>
                                 
                                 
-                                    <div id="d2e199_deleteDelete_counter">
+                                    <div id="d2e199_countersDeleteDelete_counter">
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
@@ -1308,14 +1557,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-deleteDelete-204-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-countersDeleteDelete-204-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-deleteDelete-204-schema">
-                                  <div id='responses-deleteDelete-204-schema-204' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-countersDeleteDelete-204-schema">
+                                  <div id='responses-countersDeleteDelete-204-schema-204' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1341,24 +1590,24 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-deleteDelete-204-schema-data').val(stringify(schema));
-                                        var result = $('#responses-deleteDelete-204-schema-204');
+                                        $('#responses-countersDeleteDelete-204-schema-data').val(stringify(schema));
+                                        var result = $('#responses-countersDeleteDelete-204-schema-204');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-deleteDelete-204-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-countersDeleteDelete-204-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Counters-getAllGet">
-                      <article id="api-Counters-getAllGet-0" data-group="User" data-name="getAllGet" data-version="0">
+                    <div id="api-Counters-countersIncrementPatch">
+                      <article id="api-Counters-countersIncrementPatch-0" data-group="User" data-name="countersIncrementPatch" data-version="0">
                         <div class="pull-left">
-                          <h1>getAllGet</h1>
+                          <h1>countersIncrementPatch</h1>
                           <p></p>
                         </div>
                         <div class="pull-right"></div>
@@ -1367,280 +1616,31 @@ except ApiException as e:
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/GetAll</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="patch"><code><span class="pln">/counters/increment</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Counters-getAllGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Counters-getAllGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Counters-getAllGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Counters-getAllGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Counters-getAllGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Counters-getAllGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Counters-getAllGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Counters-getAllGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Counters-getAllGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Counters-getAllGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Counters-getAllGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Counters-countersIncrementPatch-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Counters-countersIncrementPatch-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Counters-countersIncrementPatch-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersIncrementPatch-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersIncrementPatch-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Counters-countersIncrementPatch-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersIncrementPatch-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersIncrementPatch-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Counters-countersIncrementPatch-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Counters-countersIncrementPatch-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Counters-countersIncrementPatch-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Counters-getAllGet-0-curl">
-                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
--H "Accept: application/json"\
-"//GetAll"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Counters-getAllGet-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.CountersApi;
-
-import java.io.File;
-import java.util.*;
-
-public class CountersApiExample {
-
-    public static void main(String[] args) {
-        
-        CountersApi apiInstance = new CountersApi();
-        try {
-            apiInstance.getAllGet();
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#getAllGet");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Counters-getAllGet-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.CountersApi;
-
-public class CountersApiExample {
-
-    public static void main(String[] args) {
-        CountersApi apiInstance = new CountersApi();
-        try {
-            apiInstance.getAllGet();
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#getAllGet");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Counters-getAllGet-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Counters-getAllGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">
-CountersApi *apiInstance = [[CountersApi alloc] init];
-
-[apiInstance getAllGetWithCompletionHandler: 
-              ^(NSError* error) {
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Counters-getAllGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
-
-var api = new SampleKtorServer.CountersApi()
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getAllGet(callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Counters-getAllGet-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Counters-getAllGet-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class getAllGetExample
-    {
-        public void main()
-        {
-
-            var apiInstance = new CountersApi();
-
-            try
-            {
-                apiInstance.getAllGet();
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CountersApi.getAllGet: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Counters-getAllGet-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\ApiCountersApi();
-
-try {
-    $api_instance->getAllGet();
-} catch (Exception $e) {
-    echo 'Exception when calling CountersApi->getAllGet: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Counters-getAllGet-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::CountersApi;
-
-my $api_instance = WWW::SwaggerClient::CountersApi->new();
-
-eval { 
-    $api_instance->getAllGet();
-};
-if ($@) {
-    warn "Exception when calling CountersApi->getAllGet: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Counters-getAllGet-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.CountersApi()
-
-try: 
-    api_instance.get_all_get()
-except ApiException as e:
-    print("Exception when calling CountersApi->getAllGet: %s\n" % e)</code></pre>
-                            </div>
-                          </div>
-
-                          <h2>Parameters</h2>
-
-
-
-
-
-
-                          <h2>Responses</h2>
-                            <h3> Status: 200 -  </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-getAllGet-200-schema">Schema</a>
-                                </li>
-
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getAllGet-200-schema">
-                                  <div id='responses-getAllGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = {
-  "description" : "",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "items" : {
-          "$ref" : "#/components/schemas/com.example.dto.response.CountersResponse"
-        },
-        "x-content-type" : "application/json"
-      }
-    }
-  }
-};
-                                        var schema = schemaWrapper.content["application/json"].schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.components = {};
-                                          schemaWrapper.components.schemas = Object.assign({}, defs);
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-getAllGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-getAllGet-200-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-getAllGet-200-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-
-                        </article>
-                      </div>
-                      <hr>
-                    <div id="api-Counters-incrementPatch">
-                      <article id="api-Counters-incrementPatch-0" data-group="User" data-name="incrementPatch" data-version="0">
-                        <div class="pull-left">
-                          <h1>incrementPatch</h1>
-                          <p></p>
-                        </div>
-                        <div class="pull-right"></div>
-                        <div class="clearfix"></div>
-                        <p></p>
-                        <p class="marked"></p>
-                        <p></p>
-                        <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="patch"><code><span class="pln">/Increment</span></code></pre>
-                        <p>
-                          <h3>Usage and SDK Samples</h3>
-                        </p>
-                        <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Counters-incrementPatch-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Counters-incrementPatch-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Counters-incrementPatch-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Counters-incrementPatch-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Counters-incrementPatch-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Counters-incrementPatch-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Counters-incrementPatch-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Counters-incrementPatch-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Counters-incrementPatch-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Counters-incrementPatch-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Counters-incrementPatch-0-python">Python</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Counters-incrementPatch-0-curl">
+                          <div class="tab-pane active" id="examples-Counters-countersIncrementPatch-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X PATCH\
 -H "Accept: application/json"\
-"//Increment?counter="</code></pre>
+"//counters/increment?counter="</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Counters-incrementPatch-0-java">
+                          <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1656,16 +1656,16 @@ public class CountersApiExample {
         CountersApi apiInstance = new CountersApi();
          counter = ; //  | 
         try {
-            apiInstance.incrementPatch(counter);
+            apiInstance.countersIncrementPatch(counter);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#incrementPatch");
+            System.err.println("Exception when calling CountersApi#countersIncrementPatch");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Counters-incrementPatch-0-android">
+                          <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.CountersApi;
 
 public class CountersApiExample {
@@ -1674,24 +1674,24 @@ public class CountersApiExample {
         CountersApi apiInstance = new CountersApi();
          counter = ; //  | 
         try {
-            apiInstance.incrementPatch(counter);
+            apiInstance.countersIncrementPatch(counter);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#incrementPatch");
+            System.err.println("Exception when calling CountersApi#countersIncrementPatch");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Counters-incrementPatch-0-groovy">
+  <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Counters-incrementPatch-0-objc">
+                            <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-objc">
                               <pre class="prettyprint"><code class="language-cpp"> *counter = ; //  (optional)
 
 CountersApi *apiInstance = [[CountersApi alloc] init];
 
-[apiInstance incrementPatchWith:counter
+[apiInstance countersIncrementPatchWith:counter
               completionHandler: ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
@@ -1700,7 +1700,7 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-incrementPatch-0-javascript">
+                            <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
 var api = new SampleKtorServer.CountersApi()
@@ -1714,14 +1714,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.incrementPatch(opts, callback);
+api.countersIncrementPatch(opts, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Counters-incrementPatch-0-angular">
+                            <!--<div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Counters-incrementPatch-0-csharp">
+                            <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1730,7 +1730,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class incrementPatchExample
+    public class countersIncrementPatchExample
     {
         public void main()
         {
@@ -1740,11 +1740,11 @@ namespace Example
 
             try
             {
-                apiInstance.incrementPatch(counter);
+                apiInstance.countersIncrementPatch(counter);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CountersApi.incrementPatch: " + e.Message );
+                Debug.Print("Exception when calling CountersApi.countersIncrementPatch: " + e.Message );
             }
         }
     }
@@ -1752,7 +1752,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-incrementPatch-0-php">
+                            <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -1760,14 +1760,14 @@ $api_instance = new Swagger\Client\ApiCountersApi();
 $counter = ; //  | 
 
 try {
-    $api_instance->incrementPatch($counter);
+    $api_instance->countersIncrementPatch($counter);
 } catch (Exception $e) {
-    echo 'Exception when calling CountersApi->incrementPatch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CountersApi->countersIncrementPatch: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-incrementPatch-0-perl">
+                            <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::CountersApi;
@@ -1776,14 +1776,14 @@ my $api_instance = WWW::SwaggerClient::CountersApi->new();
 my $counter = ; #  | 
 
 eval { 
-    $api_instance->incrementPatch(counter => $counter);
+    $api_instance->countersIncrementPatch(counter => $counter);
 };
 if ($@) {
-    warn "Exception when calling CountersApi->incrementPatch: $@\n";
+    warn "Exception when calling CountersApi->countersIncrementPatch: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-incrementPatch-0-python">
+                            <div class="tab-pane" id="examples-Counters-countersIncrementPatch-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1795,9 +1795,9 @@ api_instance = swagger_client.CountersApi()
 counter =  #  |  (optional)
 
 try: 
-    api_instance.increment_patch(counter=counter)
+    api_instance.counters_increment_patch(counter=counter)
 except ApiException as e:
-    print("Exception when calling CountersApi->incrementPatch: %s\n" % e)</code></pre>
+    print("Exception when calling CountersApi->countersIncrementPatch: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1817,7 +1817,7 @@ except ApiException as e:
                                 <td>
                                 
                                 
-                                    <div id="d2e199_incrementPatch_counter">
+                                    <div id="d2e199_countersIncrementPatch_counter">
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
@@ -1836,14 +1836,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-incrementPatch-422-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-countersIncrementPatch-422-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-incrementPatch-422-schema">
-                                  <div id='responses-incrementPatch-422-schema-422' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-countersIncrementPatch-422-schema">
+                                  <div id='responses-countersIncrementPatch-422-schema-422' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1869,14 +1869,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-incrementPatch-422-schema-data').val(stringify(schema));
-                                        var result = $('#responses-incrementPatch-422-schema-422');
+                                        $('#responses-countersIncrementPatch-422-schema-data').val(stringify(schema));
+                                        var result = $('#responses-countersIncrementPatch-422-schema-422');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-incrementPatch-422-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-countersIncrementPatch-422-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1884,14 +1884,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-incrementPatch-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-countersIncrementPatch-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-incrementPatch-200-schema">
-                                  <div id='responses-incrementPatch-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-countersIncrementPatch-200-schema">
+                                  <div id='responses-countersIncrementPatch-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1917,24 +1917,24 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-incrementPatch-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-incrementPatch-200-schema-200');
+                                        $('#responses-countersIncrementPatch-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-countersIncrementPatch-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-incrementPatch-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-countersIncrementPatch-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Counters-readGet">
-                      <article id="api-Counters-readGet-0" data-group="User" data-name="readGet" data-version="0">
+                    <div id="api-Counters-countersReadGet">
+                      <article id="api-Counters-countersReadGet-0" data-group="User" data-name="countersReadGet" data-version="0">
                         <div class="pull-left">
-                          <h1>readGet</h1>
+                          <h1>countersReadGet</h1>
                           <p></p>
                         </div>
                         <div class="pull-right"></div>
@@ -1943,31 +1943,31 @@ except ApiException as e:
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Read</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/counters/read</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Counters-readGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Counters-readGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Counters-readGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Counters-readGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Counters-readGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Counters-readGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Counters-readGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Counters-readGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Counters-readGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Counters-readGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Counters-readGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Counters-countersReadGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Counters-countersReadGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Counters-countersReadGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersReadGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersReadGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Counters-countersReadGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Counters-countersReadGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Counters-countersReadGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Counters-countersReadGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Counters-countersReadGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Counters-countersReadGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Counters-readGet-0-curl">
+                          <div class="tab-pane active" id="examples-Counters-countersReadGet-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X GET\
 -H "Accept: application/json"\
-"//Read?counter="</code></pre>
+"//counters/read?counter="</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Counters-readGet-0-java">
+                          <div class="tab-pane" id="examples-Counters-countersReadGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1983,17 +1983,17 @@ public class CountersApiExample {
         CountersApi apiInstance = new CountersApi();
          counter = ; //  | 
         try {
-            com.example.dto.response.CountersResponse result = apiInstance.readGet(counter);
+            com.example.dto.response.CountersResponse result = apiInstance.countersReadGet(counter);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#readGet");
+            System.err.println("Exception when calling CountersApi#countersReadGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Counters-readGet-0-android">
+                          <div class="tab-pane" id="examples-Counters-countersReadGet-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.CountersApi;
 
 public class CountersApiExample {
@@ -2002,25 +2002,25 @@ public class CountersApiExample {
         CountersApi apiInstance = new CountersApi();
          counter = ; //  | 
         try {
-            com.example.dto.response.CountersResponse result = apiInstance.readGet(counter);
+            com.example.dto.response.CountersResponse result = apiInstance.countersReadGet(counter);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CountersApi#readGet");
+            System.err.println("Exception when calling CountersApi#countersReadGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Counters-readGet-0-groovy">
+  <div class="tab-pane" id="examples-Counters-countersReadGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Counters-readGet-0-objc">
+                            <div class="tab-pane" id="examples-Counters-countersReadGet-0-objc">
                               <pre class="prettyprint"><code class="language-cpp"> *counter = ; //  (optional)
 
 CountersApi *apiInstance = [[CountersApi alloc] init];
 
-[apiInstance readGetWith:counter
+[apiInstance countersReadGetWith:counter
               completionHandler: ^(com.example.dto.response.CountersResponse output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -2032,7 +2032,7 @@ CountersApi *apiInstance = [[CountersApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-readGet-0-javascript">
+                            <div class="tab-pane" id="examples-Counters-countersReadGet-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SampleKtorServer = require('sample_ktor_server');
 
 var api = new SampleKtorServer.CountersApi()
@@ -2046,14 +2046,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.readGet(opts, callback);
+api.countersReadGet(opts, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Counters-readGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Counters-countersReadGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Counters-readGet-0-csharp">
+                            <div class="tab-pane" id="examples-Counters-countersReadGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2062,7 +2062,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class readGetExample
+    public class countersReadGetExample
     {
         public void main()
         {
@@ -2072,12 +2072,12 @@ namespace Example
 
             try
             {
-                com.example.dto.response.CountersResponse result = apiInstance.readGet(counter);
+                com.example.dto.response.CountersResponse result = apiInstance.countersReadGet(counter);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CountersApi.readGet: " + e.Message );
+                Debug.Print("Exception when calling CountersApi.countersReadGet: " + e.Message );
             }
         }
     }
@@ -2085,7 +2085,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-readGet-0-php">
+                            <div class="tab-pane" id="examples-Counters-countersReadGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -2093,15 +2093,15 @@ $api_instance = new Swagger\Client\ApiCountersApi();
 $counter = ; //  | 
 
 try {
-    $result = $api_instance->readGet($counter);
+    $result = $api_instance->countersReadGet($counter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CountersApi->readGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CountersApi->countersReadGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-readGet-0-perl">
+                            <div class="tab-pane" id="examples-Counters-countersReadGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::CountersApi;
@@ -2110,15 +2110,15 @@ my $api_instance = WWW::SwaggerClient::CountersApi->new();
 my $counter = ; #  | 
 
 eval { 
-    my $result = $api_instance->readGet(counter => $counter);
+    my $result = $api_instance->countersReadGet(counter => $counter);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling CountersApi->readGet: $@\n";
+    warn "Exception when calling CountersApi->countersReadGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Counters-readGet-0-python">
+                            <div class="tab-pane" id="examples-Counters-countersReadGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2130,10 +2130,10 @@ api_instance = swagger_client.CountersApi()
 counter =  #  |  (optional)
 
 try: 
-    api_response = api_instance.read_get(counter=counter)
+    api_response = api_instance.counters_read_get(counter=counter)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CountersApi->readGet: %s\n" % e)</code></pre>
+    print("Exception when calling CountersApi->countersReadGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -2153,7 +2153,7 @@ except ApiException as e:
                                 <td>
                                 
                                 
-                                    <div id="d2e199_readGet_counter">
+                                    <div id="d2e199_countersReadGet_counter">
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
@@ -2172,14 +2172,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-readGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-countersReadGet-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-readGet-200-schema">
-                                  <div id='responses-readGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-countersReadGet-200-schema">
+                                  <div id='responses-countersReadGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -2205,14 +2205,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-readGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-readGet-200-schema-200');
+                                        $('#responses-countersReadGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-countersReadGet-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-readGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-countersReadGet-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -2220,14 +2220,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-readGet-404-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-countersReadGet-404-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-readGet-404-schema">
-                                  <div id='responses-readGet-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-countersReadGet-404-schema">
+                                  <div id='responses-countersReadGet-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -2253,14 +2253,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-readGet-404-schema-data').val(stringify(schema));
-                                        var result = $('#responses-readGet-404-schema-404');
+                                        $('#responses-countersReadGet-404-schema-data').val(stringify(schema));
+                                        var result = $('#responses-countersReadGet-404-schema-404');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-readGet-404-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-countersReadGet-404-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 

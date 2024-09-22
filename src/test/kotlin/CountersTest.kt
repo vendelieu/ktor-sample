@@ -12,7 +12,7 @@ class CountersTest : TestCtx() {
             CountersService.create("test", 1)
         }
 
-        val response = testApp.client.get("/Read?counter=test")
+        val response = testApp.client.get("/counters/read?counter=test")
 
         response.status shouldBe HttpStatusCode.OK
         response.bodyAsText() shouldBe """{"name":"test","counter":1}"""
@@ -20,14 +20,14 @@ class CountersTest : TestCtx() {
 
     @Test
     suspend fun `GET Read should return 404 when counter does not exist`() {
-        val response = testApp.client.get("/Read?counter=nonexistent")
+        val response = testApp.client.get("/counters/read?counter=nonexistent")
 
         response.status shouldBe HttpStatusCode.NotFound
     }
 
     @Test
     suspend fun `POST Create should return 201 when counter is created`() {
-        val response = testApp.client.post("/Create") {
+        val response = testApp.client.post("/counters/create") {
             contentType(ContentType.Application.Json)
             setBody("""{"name":"newCounter","counter":10}""")
         }
@@ -38,7 +38,7 @@ class CountersTest : TestCtx() {
 
     @Test
     suspend fun `POST Create should return 400 when name is empty`() {
-        val response = testApp.client.post("/Create") {
+        val response = testApp.client.post("/counters/create") {
             contentType(ContentType.Application.Json)
             setBody("""{"name":"","counter":10}""")
         }
@@ -49,7 +49,7 @@ class CountersTest : TestCtx() {
 
     @Test
     suspend fun `POST Create should return 400 when counter is negative`() {
-        val response = testApp.client.post("/Create") {
+        val response = testApp.client.post("/counters/create") {
             contentType(ContentType.Application.Json)
             setBody("""{"name":"validName","counter":-5}""")
         }
@@ -60,7 +60,7 @@ class CountersTest : TestCtx() {
 
     @Test
     suspend fun `POST Create should return 400 when name is empty and counter is negative`() {
-        val response = testApp.client.post("/Create") {
+        val response = testApp.client.post("/counters/create") {
             contentType(ContentType.Application.Json)
             setBody("""{"name":"","counter":-5}""")
         }
@@ -75,7 +75,7 @@ class CountersTest : TestCtx() {
             CountersService.create("testIncrement", 5)
         }
 
-        val response = testApp.client.patch("/Increment?counter=testIncrement")
+        val response = testApp.client.patch("/counters/increment?counter=testIncrement")
 
         response.status shouldBe HttpStatusCode.OK
         response.bodyAsText() shouldBe "6"
@@ -83,7 +83,7 @@ class CountersTest : TestCtx() {
 
     @Test
     suspend fun `PATCH Increment should return 204 when counter does not exist`() {
-        val response = testApp.client.patch("/Increment?counter=nonexistent")
+        val response = testApp.client.patch("/counters/increment?counter=nonexistent")
 
         response.status shouldBe HttpStatusCode.UnprocessableEntity
     }
@@ -94,12 +94,12 @@ class CountersTest : TestCtx() {
             CountersService.create("testDelete", 1)
         }
 
-        val response = testApp.client.delete("/Delete?counter=testDelete")
+        val response = testApp.client.delete("/counters/delete?counter=testDelete")
 
         response.status shouldBe HttpStatusCode.NoContent
 
         // Verify that the counter is deleted
-        val verifyResponse = testApp.client.get("/Read?counter=testDelete")
+        val verifyResponse = testApp.client.get("/counters/read?counter=testDelete")
         verifyResponse.status shouldBe HttpStatusCode.NotFound
     }
 
@@ -110,7 +110,7 @@ class CountersTest : TestCtx() {
             CountersService.create("testGetAll2", 2)
         }
 
-        val response = testApp.client.get("/GetAll")
+        val response = testApp.client.get("/counters/all")
 
         response.status shouldBe HttpStatusCode.OK
         response.bodyAsText() shouldBe """[{"name":"testGetAll1","counter":1},{"name":"testGetAll2","counter":2}]"""

@@ -6,16 +6,16 @@ This repository contains a Ktor-based application with various routes and their 
 
 ## Project Structure
 
-- **src/main/kotlin**: Contains the main application code, including route definitions and services.
-- **src/test/kotlin**: Contains the test cases for the application routes.
-- **build.gradle.kts**: The Gradle build script for managing dependencies and build tasks.
+- **[src/main/kotlin](./src/main/kotlin)**: Contains the main application code, including route definitions and services.
+- **[src/test/kotlin](./src/test/kotlin)**: Contains the test cases for the application routes.
+- **[build.gradle.kts](build.gradle.kts)**: The Gradle build script for managing dependencies and build tasks.
 
 ## Endpoints
 
 Also, there's swagger available at:
 ``http://0.0.0.0:8080/swagger``
 
-### `GET /Read`
+### `GET /counters/read`
 
 - **Description**: Retrieves the value of a specified counter.
 - **Query Parameter**: `counter` (the name of the counter to read)
@@ -23,14 +23,15 @@ Also, there's swagger available at:
     - `200 OK`: When the counter exists. Response body includes counter's details.
     - `404 Not Found`: When the counter does not exist.
 
-### `POST /Create`
+### `POST /counters/create`
 
 - **Description**: Creates a new counter with the specified value.
 - **Request Body**: JSON object containing `name` and `counter` values, which is being validated for blank value and for negative value.
 - **Responses**:
     - `201 Created`: When the counter is successfully created. Response body includes the created counter's details.
+    - `400 Bad Request`: When request validation failed.
 
-### `PATCH /Increment`
+### `PATCH /counters/increment`
 
 - **Description**: Increments the value of a specified counter.
 - **Query Parameter**: `counter` (the name of the counter to increment)
@@ -38,14 +39,14 @@ Also, there's swagger available at:
     - `200 OK`: When the counter exists and is incremented. Response body includes the new value.
     - `422 UnprocessableEntity`: When the counter does not exist.
 
-### `DELETE /Delete`
+### `DELETE /counters/delete`
 
 - **Description**: Deletes the specified counter.
 - **Query Parameter**: `counter` (the name of the counter to delete)
 - **Responses**:
     - `204 No Content`: When the counter is successfully deleted.
 
-### `GET /GetAll`
+### `GET /counters/all`
 
 - **Description**: Retrieves a list of all counters.
 - **Responses**:
@@ -58,13 +59,13 @@ To get started with this project, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/vendelieu/ktor-sample.git
    ```
 
 2. **Navigate to the project directory**:
 
    ```bash
-   cd your-repository
+   cd ktor-sample
    ```
 
 3. **Build the project**:
