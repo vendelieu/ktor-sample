@@ -14,9 +14,7 @@ import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun Application.main() {
-    install(ContentNegotiation) {
-        json()
-    }
+    install(ContentNegotiation) { json() }
     install(StatusPages, ExceptionHandlerConfigurator.configure())
     install(RequestValidation, ValidatorConfigurator.configure())
 
