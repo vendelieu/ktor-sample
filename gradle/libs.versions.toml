@@ -1,13 +1,13 @@
 [versions]
-ktor = "2.3.12"
-exposed = "0.53.0"
+ktor = "3.1.1"
+exposed = "0.60.0"
 h2 = "2.3.232"
 
 logback = "1.5.7"
 
-swagger = "0.6.2-alpha"
-serialization = "1.7.2"
-kotlin = "2.0.0"
+swagger = "0.7.3-alpha"
+serialization = "1.8.0"
+kotlin = "2.1.20"
 
 [bundles]
 ktor = [
@@ -46,4 +46,4 @@ h2 = { module = "com.h2database:h2", version.ref = "h2" }
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-swagger = { id = "io.github.tabilzad.ktor-docs-plugin-gradle", version.ref = "swagger" }
+swagger = { id = "io.github.tabilzad.inspektor", version.ref = "swagger" }
